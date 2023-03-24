@@ -1,7 +1,7 @@
 <script>
 
   import { onMount } from 'svelte';
-  import { ToastStore } from './stores';
+  import { ToastStore,ModalStore } from './stores';
 
   import Tag from './components/Tag.svelte'
   import Button from './components/Button.svelte';
@@ -42,3 +42,5 @@
 <Form loading={ loading }>
   <Input type=text icon="tag" />
 </Form>
+
+<Button on:click={} text='Desplegar Modal' color='light'/>

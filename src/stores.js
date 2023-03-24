@@ -1,6 +1,7 @@
 import { writable } from "svelte/store";
 
 export const ToastStore = Toast(null)
+export const ModalStore = writable(true)
 
 function Toast() {
 
