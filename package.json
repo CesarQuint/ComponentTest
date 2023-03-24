@@ -1,0 +1,20 @@
+{
+  "name": "componenttest",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "css-build": "node-sass --omit-source-map-url public/sass/mystyles.scss public/css/mystyles.css",
+    "css-watch": "npm run css-build -- --watch"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
+    "bulma": "^0.9.4",
+    "node-sass": "^8.0.0",
+    "svelte": "^3.55.1",
+    "vite": "^4.2.0"
+  }
+}
