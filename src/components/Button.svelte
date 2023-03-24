@@ -4,7 +4,7 @@
     export let type = 'button'
 
     export let icon = null
-    export let iconType = 'fa'
+    export let iconType = 'fas'
     export let color = null
     export let size = null
 
@@ -27,6 +27,6 @@
         <span class="icon"><i class="{ iconType } fa-{ icon }"></i></span>
     {/if}
     {#if text}   
-        {text}
+       <span>{ text }</span>
     {/if}
 </button>

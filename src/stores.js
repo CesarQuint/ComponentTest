@@ -9,31 +9,39 @@ function Toast() {
     function error(data) {
         set({
             color: 'danger',
-            message: data.message
+            message: data.message,
+            isLight:data.isLight,
+            link:data.link
         })
         close()
     }
 
-    function warning(message) {
+    function warning(data) {
         set({
             color: 'warning',
-            message
+            message: data.message,
+            isLight:data.isLight,
+            link:data.link
         })
         close()
     }
 
-    function info(message) {
+    function info(data) {
         set({
             color: 'info',
-            message
+            message: data.message,
+            isLight:data.isLight,
+            link:data.link
         })
         close()
     }
 
-    function success(message) {
+    function success(data) {
         set({
             color: 'success',
-            message
+            message: data.message,
+            isLight:data.isLight,
+            link:data.link
         })
         close()
     }
