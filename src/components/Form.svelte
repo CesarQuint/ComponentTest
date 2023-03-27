@@ -2,8 +2,8 @@
 
     import { createEventDispatcher } from "svelte";
 
-    import Button from "./Button.svelte";
-    import Loading from "./Loading.svelte";
+    import Button from "./button.svelte";
+    import Loading from "./loading.svelte";
 
     const dispatch = createEventDispatcher()
 
