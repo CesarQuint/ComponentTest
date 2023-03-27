@@ -8,6 +8,7 @@
   import Toast from './components/Toast.svelte';
   import Form from './components/Form.svelte';
   import Input from './components/Input.svelte';
+  import Loading from './components/Loading.svelte';
 
   let loading =false
 
@@ -42,3 +43,5 @@
 <Form loading={ loading }>
   <Input type=text icon="tag" />
 </Form>
+
+<Loading loading={true}/>

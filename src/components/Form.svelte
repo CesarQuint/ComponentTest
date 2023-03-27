@@ -1,7 +1,9 @@
 <script>
 
     import { createEventDispatcher } from "svelte";
+
     import Button from "./Button.svelte";
+    import Loading from "./Loading.svelte";
 
     const dispatch = createEventDispatcher()
 
@@ -12,9 +14,15 @@
 <form on:submit|preventDefault>
     <slot>
     </slot>
-    
+
+    <Loading { loading } />
+
     {#if !loading}
-        <Button on:click={()=>dispatch('canceled')} color='white' icon='ban' text='Cancelar'/>
-        <Button type="submit" color='primary' icon='save' text='Guardar'/>
+        <slot name="buttons">
+            <div class="buttons">
+                <Button on:click={()=>dispatch('canceled')} color='white' icon='ban' text='Cancelar'/>
+                <Button type="submit" color='primary' icon='save' text='Guardar'/>
+            </div>
+        </slot>
     {/if}
 </form>
