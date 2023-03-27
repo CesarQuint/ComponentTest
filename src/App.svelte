@@ -14,8 +14,25 @@
   import Modal from './components/modal.svelte';
   import Dropdown from './components/dropdown.svelte';
 
-  let loading =false
-  let metadata ={}
+  let loading = false
+  let metadata = {}
+  let tagOptions= [{
+    text: 'Tag 1',
+    color: 'primary',
+    isLight: true
+  },{
+    text: 'Tag 2',
+    color: 'light'
+  },
+  {
+    text:'Tag 1',
+    color:'black',
+    isLight: true
+  },
+  {
+    text:'Tag 1',
+    color:'primary'
+  }]
 
   
   const getItems = async () => {
@@ -36,7 +53,7 @@
         href: '#'
       }
     }
-    ToastStore.error(data)
+    ToastStore.success(data)
 
     getItems()
 
@@ -51,15 +68,27 @@
 <br/>
 <main class="container">
   <div class="box">
+
     <Form>
       <Input label="Nombre" icon="tag" placeholder="Ingresa tu Nombre"/>
       <Input label= "Email" icon="tag" color="info" placeholder="Ingresa tu Correo"/>
-      <Dropdown text="Opciones" options={[{text:'Opcion 1'},{text:'Opcion 2'},{text:'Opcion 3'}]}/>
-    </Form>
+      <Dropdown text="Opciones" options={[{text: 'Opcion 1'},{text: 'Opcion 2'},{text: 'Opcion 3'}]}/>
+
+      <div class="tags">
+
+        {#each tagOptions as tagOption }
+        <Tag color={tagOption.color} text={tagOption.text} isLight={tagOption.isLight}/>
+      {/each}
+
+      </div>
+
+    </Form> 
 
   </div>
   <br>
+
   <Button color="black" text="Abrir el Modal" on:click={()=>UserStore.modalCreate()}/>
+
   <Modal id="UserCreate" title="Crear usuario" type="card">
     <div class="box">
       <p>Este es un modal de carta con aspectos</p>
@@ -70,8 +99,10 @@
   <br>
   <Pagination metadata={metadata}/>
 </main>
+
 <br>
 <br><br><br><br>
+
 <footer class="footer">
   <div class="content has-text-centered">
     <p>

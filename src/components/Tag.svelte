@@ -9,8 +9,11 @@
    
 </script>
 
+<style>
+    .tag{margin: 0 0.5rem;}
+</style>
+
 <span
-    
     class="tag is-{color} is-{size}"
     class:is-light={isLight}
     class:is-rounded={isRounded}

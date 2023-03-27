@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from "svelte";
-  import { each } from "svelte/internal";
+    import { each } from "svelte/internal";
 
     let dispatch = createEventDispatcher()
 
@@ -21,7 +21,7 @@
             return
         metadata.page=metadata.page + v
         dispatch('changed')
-        
+        console.log(metadata.page);
     }
 
     
