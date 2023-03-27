@@ -13,15 +13,16 @@
   import Modal from './components/modal.svelte';
 
   let loading =false
-
   let metadata ={}
 
   
   const getItems = async () => {
       let result = await fetch('https://dummyjson.com/products')
       let data = await result.json()
-      metadata = data
-      console.log(metadata);
+      metadata ={
+        pages:100,
+        page:0
+      }
     }
 
   onMount(()=>{
@@ -49,7 +50,6 @@
   <Tag text='Tag Rojo' color='primary' size='large' isRounded/>
   <Tag isDelete text="Hola como estas " color='primary' size='large' isRounded/>
   <Tag text='Tag Rojo' size='medium' color='danger' isDelete />
-  <Button text='Abrir Modal' color='primary' on:click={()=>UserStore.modalCreate()}/>
 </div>
 <br>
 
@@ -61,6 +61,8 @@
 <Loading loading={true}/>
 
 <Pagination metadata={metadata}/>
+
+<Button text='Abrir Modal' color='primary' on:click={()=>UserStore.modalCreate()}/>
 
 <Modal id="UserCreate" title="Crear">
  <div class="box">
