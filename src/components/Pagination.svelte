@@ -21,7 +21,7 @@
             return
         metadata.page=metadata.page + v
         dispatch('changed')
-        console.log(metadata.page);
+        
     }
 
     
